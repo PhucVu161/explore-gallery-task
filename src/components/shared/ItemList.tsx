@@ -2,7 +2,7 @@
 
 import { useInfiniteItems } from '@/app/hooks/useInfiniteItems'; // ← NEW
 import Link from 'next/link';
-import ItemCard from './ItemCard';
+import Item from './Item';
 import { useEffect, useRef, useCallback } from 'react';
 
 export default function ItemList() {
@@ -52,7 +52,7 @@ export default function ItemList() {
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
         {allItems.map((item: any) => (
           <Link href={`/item/${item.id}`} key={item.id}>
-            <ItemCard imageUrl={item.image} title={item.title} />
+            <Item imageUrl={item.image} title={item.title} />
           </Link>
         ))}
       </div>
