@@ -1,5 +1,6 @@
 import { Item, Category } from "./types";
 import pixabayData from '@/lib/pixabayData.json';
+import { v4 as uuidv4 } from "uuid";
 
 // Danh sách categories cố định
 export const categories: Category[] = [
@@ -15,7 +16,7 @@ let mockItems: Item[] = pixabayData.hits.map((hit, index) => {
   const category = categories[Math.floor(Math.random() * categories.length)];
 
   return {
-    id: crypto.randomUUID(),
+    id: uuidv4(),
     title: `Item about ${category} ${index + 1}`,
     image: hit.webformatURL,
     category,
@@ -85,7 +86,7 @@ export const addMockItem = (
   newItem: Omit<Item, "id" | "likes" | "createdAt">
 ): Item => {
   const item: Item = {
-    id: crypto.randomUUID(),
+    id: uuidv4(),
     ...newItem,
     likes: 0,
     createdAt: new Date().toISOString(),
