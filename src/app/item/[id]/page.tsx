@@ -58,22 +58,22 @@ export default function ItemDetail() {
   if (error || !item) return <ItemDetailError onBack={() => router.push('/')} />;
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
+    <div className="container mx-auto px-4 py-8 max-w-7xl">
       {/* Main Item Detail - Ảnh 3/5 width */}
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-12">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-6">
         {/* Image - chiếm 3/5 width trên desktop */}
-        <div className="lg:col-span-3 relative aspect-square rounded-lg overflow-hidden">
+        <div className="lg:col-span-3 aspect-square rounded-lg overflow-hidden">
           <img
             src={item.image}
             alt={item.title}
-            className="w-full h-full object-contain"
+            className="w-full h-116 object-contain"
             loading="eager"
           />
         </div>
 
         {/* Info - chiếm 2/5 width trên desktop */}
         <div className="lg:col-span-2">
-          <Card className="w-full h-full">
+          <Card className="w-full h-116">
             <CardHeader>
               <CardTitle className="text-2xl font-bold">{item.title}</CardTitle>
               <CardDescription className="flex items-center gap-2">
