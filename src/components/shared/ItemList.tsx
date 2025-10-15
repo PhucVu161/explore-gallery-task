@@ -9,9 +9,9 @@ export default function ItemList() {
   const { 
     data, 
     isLoading, 
-    fetchNextPage: loadMore, // ← NEW
-    isFetchingNextPage: isLoadingMore, // ← NEW
-    hasNextPage: hasMore // ← NEW
+    fetchNextPage: loadMore, 
+    isFetchingNextPage: isLoadingMore,
+    hasNextPage: hasMore
   } = useInfiniteItems();
 
   const sentinelRef = useRef<HTMLDivElement>(null);
